@@ -9,6 +9,8 @@ const babel          = require('gulp-babel');
 const cssnano        = require('gulp-cssnano');
 const rename         = require('gulp-rename');
 const fileinclude    = require('gulp-file-include');
+const image          = require('gulp-image');
+const concat         = require('gulp-concat');
 
 gulp.task('less', () => {
   gulp.src('./app/less/**/*.less')
@@ -16,6 +18,7 @@ gulp.task('less', () => {
       paths: [ path.join(__dirname, 'less', 'includes') ],
       plugins: [autoprefix]
     }))
+    .pipe(concat('styles.css'))
     .pipe(cssnano())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('./dist/css'))
@@ -30,13 +33,6 @@ gulp.task('fileinclude', function() {
     }))
     .pipe(gulp.dest('./dist'))
     .pipe(browserSync.reload({ stream: true }));
-});
-
-gulp.task('css-libs', ['less'], () => {
-  gulp.src('dist/css/styles.css')
-    .pipe(cssnano())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('app/css'));
 });
 
 gulp.task('browser-sync', () => {
@@ -57,8 +53,16 @@ gulp.task('scripts', () => {
     .pipe(browserSync.reload({ stream: true }));
 });
 
+gulp.task('image', function () {
+  gulp.src('app/img/*')
+    .pipe(image())
+    .pipe(gulp.dest('./dist/img'))
+    .pipe(browserSync.reload({ stream: true }));
+});
+
 gulp.task('watch', ['browser-sync', 'less', 'fileinclude', 'scripts'], () => {
 	gulp.watch('app/less/**/*.less', ['less']);
 	gulp.watch('app/**/*.html', ['fileinclude']);
 	gulp.watch('app/js/**/*.js', ['scripts']);
+  gulp.watch('app/img/*', ['image']);
 });

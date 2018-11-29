@@ -2,7 +2,7 @@
 .main-block {
 	width: 300px;
 	height: 900px;
-	border: 3px solid #BADA55;
+	border: 2px solid #e6e5eb;
 }
 .main-block_title {
 	width: 100%;
@@ -10,12 +10,12 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-bottom: 3px solid #D1E5E1;
+	border-bottom: 3px solid #e6e5eb;
 	text-transform: uppercase;
 	font-family: 'Hind';
 	font-size: 30px;
 	font-weight: bold;
-	color: #C0D3C5;
+	color: #969bc1;
 }
 .block-photo {
 	display: flex;
@@ -36,7 +36,41 @@
 	text-transform: capitalize;
 	font-weight: bold;
 	font-size: 24px;
+	color: #00031f;
 }
 .main-block_info_email {
 	text-align: center;
+	color: #676990;
+}
+.main-block_settings {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 50px;
+    margin-top: 40px
+}
+.buttons-constol {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #f0effd;
+}
+.buttons-constol {
+	position: relative;
+	& img {
+		position: absolute;
+	    left: 50%;
+	    top: 50%;
+	    transform: translate(-50%, -50%) scale(0.7);
+	}
+	.buttons-constol_notification {
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background-color: #ff557d;
+		color: white;
+		position: absolute;
+	    right: -3px;
+	    top: -3px;
+	    text-align: center;
+	}
 }
