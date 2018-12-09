@@ -25,7 +25,7 @@ gulp.task('less', () => {
     .pipe(browserSync.reload({ stream: true }));
 });
 
-gulp.task('fileinclude', function() {
+gulp.task('fileinclude', () => {
   gulp.src('app/**/*.html')
     .pipe(fileinclude({
       prefix: '@@',
@@ -53,16 +53,23 @@ gulp.task('scripts', () => {
     .pipe(browserSync.reload({ stream: true }));
 });
 
-gulp.task('image', function () {
+gulp.task('image', () => {
   gulp.src('app/img/*')
     .pipe(image())
     .pipe(gulp.dest('./dist/img'))
     .pipe(browserSync.reload({ stream: true }));
 });
 
-gulp.task('watch', ['browser-sync', 'less', 'fileinclude', 'scripts'], () => {
+gulp.task('fonts', () => {
+  gulp.src('app/fonts/*')
+    .pipe(gulp.dest('./dist/fonts'))
+    .pipe(browserSync.reload({ stream: true }));
+})
+
+gulp.task('watch', ['browser-sync', 'less', 'fileinclude', 'scripts', 'image', 'fonts'], () => {
 	gulp.watch('app/less/**/*.less', ['less']);
 	gulp.watch('app/**/*.html', ['fileinclude']);
 	gulp.watch('app/js/**/*.js', ['scripts']);
   gulp.watch('app/img/*', ['image']);
+  gulp.watch('app/fonts/*', ['fonts']);
 });

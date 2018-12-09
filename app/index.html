@@ -12,7 +12,11 @@
 <body>
 	<main>
 		@@include('./template/main-info.html')
-		@@include('./template/search-area.html')
+		<div class="tasks-window">		
+			@@include('./template/search-area.html')
+			@@include('./template/tasks.html')
+			@@include('./template/tasks-info.html')
+		</div>
 	</main>
 </body>
 </html>
