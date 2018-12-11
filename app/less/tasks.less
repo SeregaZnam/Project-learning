@@ -2,8 +2,6 @@
 	display: inline-block;
 	vertical-align: top;
 	width: 40%;
-	height: 100vh;
-	outline: 1px solid red;
 }
 .tasks-block_info {
     border: 1px solid #e6e5eb;
@@ -26,7 +24,53 @@
 	}
 	.projects-info_arrow {
 		flex-grow: 2;
-		text-align: center;
+		text-align: right;
 		transform: scale(0.7);
+	}
+}
+.tasks-item {
+	max-height: 760px;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+.task-item {
+	display: flex;
+    height: 120px;
+    align-items: center;
+	border: 1px solid #e6e5eb;
+	padding: 0 30px;
+	.task-item_info {
+    	padding: 0 21px;
+    	& span {
+    		display: block;
+    		width: 200px;
+    	}
+    	& span:nth-child(2) {
+    		color: #9599b6;
+    	}
+    }
+    .task-item_avatar {
+    	& img {
+    		width: 40px;
+    		height: 40px;
+    		border-radius: 50%;
+    	}
+    }
+}
+.add-task {
+	display: flex;
+    height: 106px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e6e5eb;
+	.add-task_btn {
+	    width: 150px;
+	    height: 40px;
+	    border: none;
+	    border-radius: 30px;
+	    color: white;
+	    font-size: 18px;
+	    background-color: #4e78fe;
 	}
 }
