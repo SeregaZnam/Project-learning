@@ -1,0 +1,36 @@
+@import "../mixins.less";
+
+.task-info_menu {
+	display: flex;
+	border: 1px solid #e6e5eb;
+	height: 80px;
+	align-items: center;
+	justify-content: space-between;
+	.task-info_user {
+		display: flex;
+		margin-left: 30px;
+		align-items: center;
+		& img {
+			.image-mixin(40px, 40px);
+		}
+		& .task-info_user__name {
+			margin-left: 10px;
+			font-size: 20px;
+		}
+	}
+	.task-info_menu__options {
+		display: flex;
+		& .option-item {
+			.image-mixin(45px, 45px);
+			background-color: #eaedfc;
+			position: relative;
+			margin-left: 15px;
+			& img {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%) scale(0.8);
+			}
+		}
+	}
+}

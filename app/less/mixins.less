@@ -1,0 +1,9 @@
+.image-mixin(@w, @h, @br: 50%) {
+    width: @w;
+    height: @h;
+    border-radius: @br;
+}
+.line(@c, @bwidth: 1px, @w: 100%, @bstyle: solid) {
+    width: @w;
+    border-bottom: @bwidth @bstyle @c;
+}
