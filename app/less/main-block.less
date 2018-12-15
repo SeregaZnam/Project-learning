@@ -1,7 +1,8 @@
+@import "mixins.less";
+
 .main-block {
 	display: inline-block;
-	width: 400px;
-	border: 1px solid #e6e5eb;
+	width: 25%;
 }
 .main-block_title {
 	width: 100%;
@@ -15,6 +16,7 @@
 	font-size: 24px;
 	font-weight: bold;
 	color: #969bc1;
+	border-right: 1px solid #e6e5eb;
 }
 .block-photo {
 	display: flex;
@@ -60,9 +62,9 @@
 	position: relative;
 	& img {
 		position: absolute;
-	    left: 50%;
-	    top: 50%;
-	    transform: translate(-50%, -50%) scale(0.7);
+	   left: 50%;
+	   top: 50%;
+	   transform: translate(-50%, -50%) scale(0.7);
 	}
 	.buttons-constol_notification {
 		width: 20px;

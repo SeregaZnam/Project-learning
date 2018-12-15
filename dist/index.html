@@ -10,7 +10,7 @@
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-	<main>
+	<main class="page-block">
 		<div class="main-block">
 	<div class="main-block_title">
 		task manager
@@ -112,7 +112,8 @@
         <span>...</span>
     </div>
 </div>
-			<div class="tasks-block">
+			<div class="task-wrapper">
+				<div class="tasks-block">
 	<div class="tasks-block_info">
 		<div class="projects-info">
 			<div class="projects-info_line"></div>
@@ -221,13 +222,8 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="add-task">
-		<button class="add-task_btn">Add task</button>
-	</div>
-
 </div>
-			<div class="tasks-info">
+				<div class="tasks-info">
     <div class="task-info_menu">
     <div class="task-info_user">
         <img src="../img/avatar.jpg" alt="avatar">
@@ -308,7 +304,13 @@
         </div>
     </div>
 </div>
-    <div class="task-comment">
+</div>
+				<div class="task-bottom-btn">
+					<div class="add-task">
+	<button class="add-task_btn">Add task</button>
+</div>
+
+					<div class="task-comment">
 	<div class="task-comment_area">
 		<textarea class="task-comment_area__input" placeholder="Write a comment..."></textarea>
 	</div>
@@ -318,10 +320,11 @@
 		</div>
 		<div class="task-comment_forward">
 			<img class="task-comment_forward__img" src="../../img/forward.png" alt="forward">
-		</div>
+	     	</div>
 	</div>
 </div>
-</div>
+				</div>
+			</div>
 		</div>
 	</main>
 </body>

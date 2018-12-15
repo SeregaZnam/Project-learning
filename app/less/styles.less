@@ -1,17 +1,22 @@
 @font-face {
-  font-family: 'Hind';
-  src: url('../fonts/Hind-Medium.ttf');
-  src: url('../fonts/Hind-Medium.ttf') format('truetype'),
-       url('../fonts/Hind-Medium.svg') format('svg'),
-       url('../fonts/Hind-Medium.eot') format('embedded-opentype');
-  font-weight: 500;
-  font-style: normal;
+   font-family: 'Hind';
+	src: url('../fonts/Hind-Medium.ttf');
+	src: url('../fonts/Hind-Medium.ttf') format('truetype'),
+		  url('../fonts/Hind-Medium.svg') format('svg'),
+		  url('../fonts/Hind-Medium.eot') format('embedded-opentype');
+	font-weight: 500;
+	font-style: normal;
 }
 
 body {
 	font-family: 'Hind';
 }
-.tasks-window {
-	display: inline-block;
-	vertical-align: top;
+main.page-block {
+	font-size: 0;
+	& .main-block {
+		font-size: 14px;
+	}
+}
+.task-bottom-btn {
+	display: flex;
 }
