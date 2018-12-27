@@ -1,10 +1,20 @@
+@import "mixins.less";
+
+.tasks-window {
+	width: 75%;
+	display: inline-block;
+	vertical-align: top;
+}
 .tasks-block {
 	display: inline-block;
 	vertical-align: top;
 	width: 40%;
+	.font-normal();
 }
 .tasks-block_info {
-    border: 1px solid #e6e5eb;
+    border-right: 1px solid #e6e5eb;
+    border-bottom: 1px solid #e6e5eb;
+    .font-normal();
 }
 .projects-info {
 	display: flex;
@@ -56,21 +66,4 @@
     		border-radius: 50%;
     	}
     }
-}
-.add-task {
-	display: flex;
-    height: 106px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #e6e5eb;
-	.add-task_btn {
-	    width: 150px;
-	    height: 40px;
-	    border: none;
-	    border-radius: 30px;
-	    color: white;
-	    font-size: 18px;
-	    background-color: #4e78fe;
-	}
 }

@@ -10,12 +10,18 @@
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-	<main>
+	<main class="page-block">
 		@@include('./template/main-info.html')
 		<div class="tasks-window">		
 			@@include('./template/search-area.html')
-			@@include('./template/tasks.html')
-			@@include('./template/tasks-info.html')
+			<div class="task-wrapper">
+				@@include('./template/tasks.html')
+				@@include('./template/tasks-info.html')
+				<div class="task-bottom-btn">
+					@@include('./template/task-bottom-btn/add-task.html')
+					@@include('./template/task-bottom-btn/add-comment.html')
+				</div>
+			</div>
 		</div>
 	</main>
 </body>
