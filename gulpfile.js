@@ -35,23 +35,37 @@ gulp.task('fileinclude', () => {
     .pipe(browserSync.reload({ stream: true }));
 });
 
+gulp.task('fileinclude-php', () => {
+  gulp.src('app/**/*.php')
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('./dist'))
+    .pipe(browserSync.reload({ stream: true }));
+});
+
 gulp.task('browser-sync', () => {
-	browserSync({
-		server: {
-			baseDir: 'dist'
-		},
-		notify: false
-	})
+  browserSync({
+    server: {
+      baseDir: 'dist'
+    },
+    notify: false
+  })
 });
 
 gulp.task('scripts', () => {
-	gulp.src('app/**/*.js')
+  gulp.src('app/**/*.js')
     .pipe(babel({
       presets: ['@babel/env']
     }))
     .pipe(gulp.dest('./dist'))
     .pipe(browserSync.reload({ stream: true }));
 });
+// gulp.task('scripts', function() {  
+//     gulp.src(['app/**/*.js'])
+//         .pipe(gulp.dest('./dist'))
+// });
 
 gulp.task('image', () => {
   gulp.src('app/img/*')
@@ -66,10 +80,19 @@ gulp.task('fonts', () => {
     .pipe(browserSync.reload({ stream: true }));
 })
 
-gulp.task('watch', ['browser-sync', 'less', 'fileinclude', 'scripts', 'image', 'fonts'], () => {
-	gulp.watch('app/less/**/*.less', ['less']);
-	gulp.watch('app/**/*.html', ['fileinclude']);
-	gulp.watch('app/js/**/*.js', ['scripts']);
+gulp.task('watch', [
+    'browser-sync',
+    'less',
+    'fileinclude',
+    'fileinclude-php',
+    'scripts',
+    'image',
+    'fonts'
+  ], () => {
+  gulp.watch('app/less/**/*.less', ['less']);
+  gulp.watch('app/**/*.html', ['fileinclude']);
+  gulp.watch('app/**/*.php', ['fileinclude-php']);
+  gulp.watch('app/js/**/*.js', ['scripts']);
   gulp.watch('app/img/*', ['image']);
   gulp.watch('app/fonts/*', ['fonts']);
 });

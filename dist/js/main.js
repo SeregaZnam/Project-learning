@@ -1,7 +1,7 @@
 "use strict";
 
-// @flow
-
-const test = (n) => {
-    return n * n;
+var foo = function foo(a) {
+  return a * a;
 };
+
+console.log(foo(90));

@@ -4,7 +4,6 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link href="css/styles.min.css" rel="stylesheet" type="text/css">
-	<link href="css/main-block.min.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="js/lodash.min.js"></script>
 	<script type="text/javascript" src="js/knockout-min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
