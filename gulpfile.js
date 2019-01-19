@@ -11,6 +11,7 @@ const rename         = require('gulp-rename');
 const fileinclude    = require('gulp-file-include');
 const image          = require('gulp-image');
 const concat         = require('gulp-concat');
+const connect        = require('gulp-connect-php');
 
 gulp.task('less', () => {
   gulp.src('./app/less/**/*.less')
@@ -70,7 +71,7 @@ gulp.task('scripts', () => {
 gulp.task('image', () => {
   gulp.src('app/img/*')
     .pipe(image())
-    .pipe(gulp.dest('./dist/img'))
+    .pipe(gulp.dest('./img'))
     .pipe(browserSync.reload({ stream: true }));
 });
 
@@ -78,7 +79,19 @@ gulp.task('fonts', () => {
   gulp.src('app/fonts/*')
     .pipe(gulp.dest('./dist/fonts'))
     .pipe(browserSync.reload({ stream: true }));
-})
+});
+
+gulp.task('connect-sync', () => {
+  connect.server({}, () => {
+    browserSync({
+      proxy: '127.0.0.1:8000'
+    });
+  });
+ 
+  gulp.watch('app/**/*.php').on('change', function () {
+    browserSync.reload();
+  });
+});
 
 gulp.task('watch', [
     'browser-sync',

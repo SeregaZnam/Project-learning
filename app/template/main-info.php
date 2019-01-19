@@ -6,8 +6,8 @@
 		<div class="block-photo">
 			<img class="block-photo_img" src="../img/avatar.jpg">
 		</div>
-		<div class="main-block_info__name">Natalie Smith</div>
-		<div class="main-block_info_email">natalie.smith@gmail.com</div>
+		<div class="main-block_info__name">@@name @@surname</div>
+		<div class="main-block_info_email">@@email</div>
 		<div class="main-block_settings">
 			<div class="buttons-constol">
 				<img src="../img/settings.png" alt="settings">
@@ -52,10 +52,9 @@
 	<article class="block-projects">
 		<div class="block-projects_title">projects</div>
 		<ul class="block-projects_list">
-			<li>Marketing</li>
-			<li>Design</li>
-			<li>Development</li>
-			<li>Management</li>
+			<? foreach ($data_project as $index => $project): ?>
+				<li><?= $project['name'] ?></li>
+			<? endforeach; ?>
 		</ul>
 	</article>
 	<article class="block-person">

@@ -1,0 +1,19 @@
+<div class="search-block">
+    <div class="search-block_area">
+        <span><img src="../img/search.png" alt="search"></span>
+        <input 
+            type="text" 
+            class="search-block_input"
+            placeholder="Search..."
+        >
+    </div>
+    <div class="search-block_tasks">
+        <span class="search-block_tasks__text">All tasks</span>
+        <span class="search-block_tasks__img">
+            <img src="../img/down-arrow.png" alt="down-arrow">
+        </span>
+    </div>
+    <div class="search-block_settings">
+        <span>...</span>
+    </div>
+</div>

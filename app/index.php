@@ -1,3 +1,8 @@
+<?php 
+	require 'core/controllers/main.php';
+	$data_user = data_db('users')[0];
+	$data_project = data_db('projects');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,15 +15,20 @@
 </head>
 <body>
 	<main class="page-block">
-		@@include('./template/main-info.html')
+		@@include('./template/main-info.php', {
+			"name": "<?= $data_user['name'] ?>",
+			"surname": "<?= $data_user['surname'] ?>",
+			"email": "<?= $data_user['email'] ?>",
+			"projects": "<?= $data_project ?>"
+		})
 		<div class="tasks-window">		
-			@@include('./template/search-area.html')
+			@@include('./template/search-area.php')
 			<div class="task-wrapper">
-				@@include('./template/tasks.html')
-				@@include('./template/tasks-info.html')
+				@@include('./template/tasks.php')
+				@@include('./template/tasks-info.php')
 				<div class="task-bottom-btn">
-					@@include('./template/task-bottom-btn/add-task.html')
-					@@include('./template/task-bottom-btn/add-comment.html')
+					@@include('./template/task-bottom-btn/add-task.php')
+					@@include('./template/task-bottom-btn/add-comment.php')
 				</div>
 			</div>
 		</div>
